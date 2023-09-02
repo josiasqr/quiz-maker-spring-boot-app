@@ -1,7 +1,8 @@
-package com.pe.quizmaker.service;
+package com.pe.quizmaker.service.impl;
 
 import com.pe.quizmaker.model.Question;
 import com.pe.quizmaker.repository.QuestionRepository;
+import com.pe.quizmaker.service.QuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

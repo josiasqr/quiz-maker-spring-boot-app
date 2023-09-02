@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "b947ff1b-2c1e-4d1e-8053-6807312ab439",
+		"name": "Quiz Maker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18931003"
+	},
+	"item": [
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "Listar Quiz",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/quiz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Preguntas Cuestionario numero 02\",\n    \"question\": [\n        {\n            \"question\": \"Pregunta numero 1?\",\n            \"answers\": [\n                {\n                    \"answer\": \"10 de Setiembre\",\n                    \"correct\": false\n                },\n                {\n                    \"answer\": \"2 de Octubre\",\n                    \"correct\": false\n                },\n                {\n                    \"answer\": \"25 de Diciembre\",\n                    \"correct\": false\n                },\n                {\n                    \"answer\": \"respuesta correcta\",\n                    \"correct\": true\n                }\n            ],\n            \"category\": {\n                \"id\": 1,\n                \"name\": \"Cultura\"\n            }\n        },\n        {\n            \"question\": \"Pregunta 2 ?\",\n            \"answers\": [\n                {\n                    \"answer\": \"Respuesta correcta\",\n                    \"correct\": true\n                },\n                {\n                    \"answer\": \"2021\",\n                    \"correct\": false\n                },\n                {\n                    \"answer\": \"2019\",\n                    \"correct\": false\n                }\n            ],\n            \"category\": {\n                \"id\": 2,\n                \"name\": \"Informatica\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quiz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List Questions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Question for ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/questions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": \"Que fecha es hoy ?\",\n    \"answers\": [\n        {\n            \"answer\": \"10 de Setiembre\",\n            \"correct\": false\n        },\n        {\n            \"answer\": \"2 de Octubre\",\n            \"correct\": false\n        },\n        {\n            \"answer\": \"25 de Diciembre\",\n            \"correct\": false\n        },\n        {\n            \"answer\": \"2 de Setiembre\",\n            \"correct\": true\n        }\n    ],\n    \"category\": {\n        \"id\": 1,\n        \"name\": \"Cultura\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
