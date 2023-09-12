@@ -4,10 +4,7 @@ import com.pe.quizmaker.model.Quiz;
 import com.pe.quizmaker.service.QuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,6 +17,12 @@ public class QuizController {
     return ResponseEntity.ok(quizService.list());
   }
   
+  @GetMapping("/{id}")
+  public ResponseEntity<Quiz> getQuiz(@PathVariable Long id){
+    return quizService.findQuiz(id)
+        .map(ResponseEntity::ok)
+        .orElse(ResponseEntity.notFound().build());
+  }
   @RequestMapping
   public ResponseEntity<Quiz> create(@RequestBody Quiz quiz) {
     return ResponseEntity.ok(quizService.create(quiz));

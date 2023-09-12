@@ -6,6 +6,8 @@ import com.pe.quizmaker.service.QuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class QuizServiceImpl implements QuizService {
@@ -14,6 +16,11 @@ public class QuizServiceImpl implements QuizService {
   @Override
   public Iterable<Quiz> list() {
     return quizRepository.findAll();
+  }
+  
+  @Override
+  public Optional<Quiz> findQuiz(Long id) {
+    return quizRepository.findById(id);
   }
   
   @Override
